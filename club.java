@@ -1,4 +1,4 @@
-package cps406;
+//package cps406;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -13,6 +13,18 @@ public class club extends JFrame {
 	private JPanel contentPane;
 
 	public static void main(String[] args) {
+		
+		Member David = new Member("David", "Chester"); //debug
+		Member Sarah = new Member("Sarah", "James"); //debug
+		Member Bob = new Member("Bob", "Williams"); //debug
+		
+		MemberList members = new MemberList(); //debug
+		members.addMember(Bob); //debug
+		members.addMember(Sarah); //debug
+		members.addMember(David); //debug
+		
+		members.printList(); //debug
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
