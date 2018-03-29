@@ -2,6 +2,8 @@
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,30 +14,6 @@ public class club extends JFrame {
 
 	private JPanel contentPane;
 
-	public static void main(String[] args) {
-		
-		Member David = new Member("David", "Chester"); //debug
-		Member Sarah = new Member("Sarah", "James"); //debug
-		Member Bob = new Member("Bob", "Williams"); //debug
-		
-		MemberList members = new MemberList(); //debug
-		members.addMember(Bob); //debug
-		members.addMember(Sarah); //debug
-		members.addMember(David); //debug
-		
-		members.printList(); //debug
-		
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					club frame = new club();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	public club() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -56,5 +34,14 @@ public class club extends JFrame {
 		JButton btnNewButton_2 = new JButton("Member");
 		btnNewButton_2.setBounds(319, 12, 117, 25);
 		contentPane.add(btnNewButton_2);
+	}
+	
+	class Memberpage implements ActionListener
+	{
+		public void actionPerformed(ActionEvent event)
+		{
+			
+		}
+
 	}
 }
