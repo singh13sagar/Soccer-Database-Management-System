@@ -13,6 +13,10 @@ public static void main(String[] args) {
 		members.addMember(Sarah); //debug
 		members.addMember(David); //debug
 		
+		members.printList();//debug
+		
+		members.sortList(); //debug
+		System.out.println();
 		members.printList(); //debug
 		
 		EventQueue.invokeLater(new Runnable() {

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MemberList {
 	private ArrayList<Member> Members;
@@ -13,9 +14,14 @@ public class MemberList {
 		Members.add(m);
 	}
 	
-	public void sortList()
+	public void removeMember(Member m)
 	{
-		
+		Members.remove(m);
+	}
+	
+	public void sortList() // sort by practices attended 
+	{
+		Collections.sort(Members);
 	}
 	
 	public void printList()
