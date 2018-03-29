@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class MemberList {
 	private ArrayList<Member> Members;
@@ -32,4 +33,24 @@ public class MemberList {
 		}
 	}
 	
+	public void paySort()
+	{
+		paidCompare p = new paidCompare();
+		Members.sort((Comparator<? super Member>) p);
+	}
+	
+	public class paidCompare implements Comparator<Member>{
+
+		public int compare(Member person1, Member person2)
+		{
+			if(person1.getTimesPaid() > person2.getTimesPaid()) return -1;
+			else if(person1.getTimesPaid() < person2.getTimesPaid()) return 1;
+			else return 0;
+			
+		}
+
+	}
+	
 }
+
+

@@ -9,13 +9,17 @@ public class Member implements Comparable<Member>{
 	private int pBalance; // payment balance
 	private String phoneNumber;
 	Random rand = new Random();  // debug
+	private int timesPaid;
+	private boolean paid;
 	
 	public Member(String Fname, String Lname) 
 	{
 		this.Fname = Fname;
 		this.Lname = Lname;
 		pAttended = 0;
+		timesPaid = 0;
 		pAttended = rand.nextInt(10); // debug
+		timesPaid = rand.nextInt(10); // debug
 	}
 	
 	public String getName()
@@ -31,8 +35,13 @@ public class Member implements Comparable<Member>{
 	public String toString()
 	{
 		String out = "";
-		out = Fname+" "+Lname+" "+" Practices: "+ pAttended;
+		out = Fname+" "+Lname+" "+" Practices: "+ pAttended +" Times Paid: "+ timesPaid ;
 		return out; 
+	}
+	
+	public int getTimesPaid()
+	{
+		return timesPaid;
 	}
 	
 	@Override
@@ -41,4 +50,6 @@ public class Member implements Comparable<Member>{
 		else if(otherMember.getPractices() > this.getPractices()) return 1;
 		else return 0;
 	}
+	
+	
 }

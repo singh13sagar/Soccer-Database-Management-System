@@ -16,9 +16,11 @@ public static void main(String[] args) {
 		members.printList();//debug
 		
 		members.sortList(); //debug
-		System.out.println();
+		System.out.println();//debug
 		members.printList(); //debug
-		
+		System.out.println();//debug
+		members.paySort();//debug
+		members.printList();//debug
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
