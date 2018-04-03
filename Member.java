@@ -11,6 +11,7 @@ public class Member implements Comparable<Member>{
 	Random rand = new Random();  // debug
 	private int timesPaid;
 	private boolean paid;
+	private String activity;
 	
 	public Member(String Fname, String Lname) 
 	{
@@ -20,6 +21,17 @@ public class Member implements Comparable<Member>{
 		timesPaid = 0;
 		pAttended = rand.nextInt(10); // debug
 		timesPaid = rand.nextInt(10); // debug
+	}
+	
+	public void addActivity(String act)
+	{
+		activity= act;
+	}
+	
+	public String printActivity()
+	{
+		if(activity != null) return activity;
+		else return "Not enrolled";
 	}
 	
 	public String getName()
@@ -35,7 +47,7 @@ public class Member implements Comparable<Member>{
 	public String toString()
 	{
 		String out = "";
-		out = Fname+" "+Lname+" "+" Practices: "+ pAttended +" Times Paid: "+ timesPaid ;
+		out = Fname+" "+Lname+" "+" Practices: "+ pAttended +" Times Paid: "+ timesPaid +" Activity: " + printActivity() ;
 		return out; 
 	}
 	

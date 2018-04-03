@@ -21,6 +21,12 @@ public static void main(String[] args) {
 		System.out.println();//debug
 		members.paySort();//debug
 		members.printList();//debug
+		
+		Pratice p = new Pratice("BasketBall",members);
+		p.enroll(Bob);
+		
+		members.printList();
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

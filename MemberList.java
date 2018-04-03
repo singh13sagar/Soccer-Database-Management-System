@@ -20,6 +20,12 @@ public class MemberList {
 		Members.remove(m);
 	}
 	
+	public void addActivity(Member m, String a)
+	{
+		m = Members.get(Members.indexOf(m));
+		m.addActivity(a);
+	}
+	
 	public void sortList() // sort by practices attended 
 	{
 		Collections.sort(Members);
