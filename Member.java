@@ -15,17 +15,6 @@ public class Member implements Comparable<Member>{
 	private String Message;
 	
 	
-	public static void main(String[] args){  // htis method is for testing only, please remove
-		Member member = new Member ("Prabagar", "Sivakumar");
-		member.setNumber("647-555-5555");
-		member.setPaymentStatus(true);
-		member.setAddress("Somewhere in Scarborough");
-		member.setMessage("New message");
-		member.addMember();
-
-	}
-	
-	
 	
 	public Member(String Fname, String Lname) 
 	{
@@ -121,13 +110,15 @@ public class Member implements Comparable<Member>{
 	public void addMember(){     //add log of member to textfile containing member logs
 		
 		try{
-		PrintWriter writer = new PrintWriter ("logfile.txt" , "UTF-8");
-		writer.println(getFName());  
-		writer.println(getLName()); 
-		writer.println(getNumber());
-		writer.println( getPaymentStatus());
-		writer.println(getAddress());
-		writer.println(getMessage()); 
+		FileWriter writer = new FileWriter ("logfile.txt" , true);
+		writer.write(getFName()+ "\n");  
+		writer.write(getLName()+ "\n"); 
+		writer.write(getNumber()+ "\n");
+		writer.write(getPaymentStatus()+ "\n");
+		writer.write(getAddress()+ "\n");
+		writer.write(getMessage()+ "\n");
+		writer.write("" + "\n");
+		writer.flush();
 		writer.close();
 		}catch(FileNotFoundException e){
 			System.out.println("File not found.");
