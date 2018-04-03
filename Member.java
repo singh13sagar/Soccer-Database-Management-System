@@ -81,7 +81,7 @@ public class Member implements Comparable<Member>{
 		return out; 
 	}
 	
-	public int getTimesPaid()aAA
+	public int getTimesPaid()
 	{
 		return timesPaid;
 	}
