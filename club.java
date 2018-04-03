@@ -1,9 +1,5 @@
-//package cps406;
-
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -13,6 +9,19 @@ import javax.swing.JButton;
 public class club extends JFrame {
 
 	private JPanel contentPane;
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					club frame = new club();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	public club() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,6 +43,7 @@ public class club extends JFrame {
 		btnNewButton_2.setBounds(319, 12, 117, 25);
 		contentPane.add(btnNewButton_2);
 	}
+}
 	
 	class Memberpage implements ActionListener
 	{
