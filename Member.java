@@ -59,7 +59,7 @@ public class Member implements Comparable<Member>{
 	@Override
 	public int compareTo(Member otherMember) {
 		if(otherMember.getPractices() > this.getPractices()) return -1;
-		else if(otherMember.getPractices() > this.getPractices()) return 1;
+		else if(otherMember.getPractices() < this.getPractices()) return 1;
 		else return 0;
 	}
 	
