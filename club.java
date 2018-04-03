@@ -26,6 +26,7 @@ public class club extends JFrame {
 	}
 
 	public club() {
+		setTitle("Memeber Management System");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 95);
 		contentPane = new JPanel();
@@ -67,6 +68,35 @@ public class club extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Member");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String password = "abc";
+				JPanel panel = new JPanel();
+				JLabel label = new JLabel("Enter Member Name:");
+				JLabel label2 = new JLabel("Enter Password:");
+				
+				JTextField memeberName = new JPasswordField(10);
+				JPasswordField passwordBox = new JPasswordField(10);
+				panel.add(label);
+				panel.add(passwordBox);
+				panel.add(label2);
+				panel.add(memeberName);
+				String[] options = new String[]{"OK", "Cancel"};
+				int select = JOptionPane.showOptionDialog(null, panel, "Coach Validation",
+				                         JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
+				                         null, options, options[1]);
+				if(select == 0) 
+				{
+				    String memName = memeberName.getText();
+				 
+						new memberViewer().setVisible(true);
+						//new memberViewer().lblName.setText("Hello");
+						setVisible(false);
+				    
+				    
+				}
+			}
+		});
 		btnNewButton_2.setBounds(319, 12, 117, 25);
 		contentPane.add(btnNewButton_2);
 	}
