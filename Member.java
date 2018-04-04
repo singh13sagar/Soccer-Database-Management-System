@@ -2,8 +2,8 @@ import java.util.Random; // debug
 import java.io.*;
 
 public class Member implements Comparable<Member>{
-	private String Fname;
-	private String Lname;
+	public String Fname;
+	public String Lname;
 	private int pAttended; // # of practices attended
 	private String Address;
 	private int pBalance; // payment balance
@@ -25,7 +25,10 @@ public class Member implements Comparable<Member>{
 
 	}
 	
-	
+	public Member(){
+		this.Fname="";
+		this.Lname="";
+	}
 	
 	public Member(String Fname, String Lname) 
 	{
@@ -41,8 +44,11 @@ public class Member implements Comparable<Member>{
 		phoneNumber = num;
 	}
 
-	public void setPaymentStatus(boolean status){
-		paid = status;
+	public void setPaymentStatus(String bool){
+		if(bool.length()==4)
+			paid=true;
+		else
+			paid=false;
 	}
 
 	public void setAddress(String address){
