@@ -69,7 +69,7 @@ public class coachViewer extends JFrame {
 				if(select == 0) 
 				{
 				    String memName = memeberName.getText(); //gets memberName
-					 System.out.println(memName);
+					 
 				
 					 try{
 					 
