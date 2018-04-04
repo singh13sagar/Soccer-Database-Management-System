@@ -14,21 +14,7 @@ public class Member implements Comparable<Member>{
 	private String activity;
 	private String Message;
 	
-	public static void main(String[] args){
-		Member mem = new Member("Prabagar","Sivakumar");
-		mem.setNumber("647-555-5555");
-		mem.setPaymentStatus(true);
-		mem.setAddress("whatever");
-		mem.setMessage("No message");
-		mem.addMember();
-		
-		Member mem2 = new Member("Sagur","Singh");
-		mem2.setNumber("647-555-5555");
-		mem2.setPaymentStatus(true);
-		mem2.setAddress("whatever");
-		mem2.setMessage("No message");
-		mem2.addMember();
-	}
+	
 	
 	public Member(String Fname, String Lname) 
 	{
