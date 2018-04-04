@@ -2,6 +2,7 @@
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.util.*;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,6 +14,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.io.*;
 
 public class coachViewer extends JFrame {
 
@@ -67,9 +69,51 @@ public class coachViewer extends JFrame {
 				if(select == 0) 
 				{
 				    String memName = memeberName.getText(); //gets memberName
-					 System.out.println(memName);
-				    
+					 
+				
+					 try{
+					 
+				     
+				     
+				     
+					
+				     Scanner scanner = new Scanner(new File("logfile.txt"));
+				     
+				     List<String> lines = new ArrayList<String>();
+					 while(scanner.hasNextLine()){
+						 
+						 lines.add(scanner.nextLine());
+						 
+					 }
+					 
+					 for(int i = 0; i < lines.size(); i++) {   
+						    if(lines.get(i).equals(memName.trim())){
+						    	for(int it = 0;it < 6; it++){
+						    		lines.remove(i);
+						    	}
+						    }
+						} 
+					 
+					 
+                     Iterator<String> iterator = lines.iterator();
+                     PrintWriter writer = new PrintWriter("logfile.txt");
+                     while(iterator.hasNext()){
+						 writer.write(iterator.next() + "\n");
+					 }
+					 
+					
+					 writer.close();
+					 
+					 
+					 
+					 }catch(FileNotFoundException ex){
+						 System.out.println("File not found");
+					 }catch(IOException ex){
+						 System.out.println(ex);
+					 }
 				}
+			
+			
 			}
 		});
 		btnNewButton_5.setBounds(334, 97, 147, 25);
