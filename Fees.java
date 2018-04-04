@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 public class Fees extends JFrame {
 
 	private JPanel contentPane;
+	private Member user;
 
 	/**
 	 * Launch the application.
@@ -33,6 +34,8 @@ public class Fees extends JFrame {
 	 * Create the frame.
 	 */
 	public Fees() {
+		//user = mem;
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

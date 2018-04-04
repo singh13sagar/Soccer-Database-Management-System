@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 public class memberViewer extends JFrame {
 
 	private JPanel contentPane;
+	public JLabel lblName;
 
 	/**
 	 * Launch the application.
@@ -61,7 +62,7 @@ public class memberViewer extends JFrame {
 		btnNewButton_2.setBounds(366, 107, 150, 25);
 		contentPane.add(btnNewButton_2);
 		
-		JLabel lblName = new JLabel("Hello User");
+		lblName = new JLabel("Hello");
 		lblName.setBounds(27, 41, 103, 15);
 		contentPane.add(lblName);
 	}

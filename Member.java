@@ -15,7 +15,7 @@ public class Member implements Comparable<Member>{
 	private String Message;
 	
 	
-	public static void main(String[] args){  // htis method is for testing only, please remove
+	/*public static void main(String[] args){  // htis method is for testing only, please remove
 		Member member = new Member ("Prabagar", "Sivakumar");
 		member.setNumber("647-555-5555");
 		member.setPaymentStatus(true);
@@ -24,7 +24,7 @@ public class Member implements Comparable<Member>{
 		member.addMember();
 
 	}
-	
+	*/
 	public Member(){
 		this.Fname="";
 		this.Lname="";
