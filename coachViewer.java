@@ -4,7 +4,11 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -47,6 +51,27 @@ public class coachViewer extends JFrame {
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Delete Member");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String password = "abc";
+				JPanel panel = new JPanel();
+				JLabel label = new JLabel("Enter Member Name:");
+				JTextField memeberName = new JTextField(10);
+				JPasswordField passwordBox = new JPasswordField(10);
+				panel.add(label);
+				panel.add(memeberName);
+				String[] options = new String[]{"OK", "Cancel"};
+				int select = JOptionPane.showOptionDialog(null, panel, "Delete Member",
+				                         JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
+				                         null, options, options[1]);
+				if(select == 0) 
+				{
+				    String memName = memeberName.getText(); //gets memberName
+					 System.out.println(memName);
+				    
+				}
+			}
+		});
 		btnNewButton_5.setBounds(334, 97, 147, 25);
 		contentPane.add(btnNewButton_5);
 		
