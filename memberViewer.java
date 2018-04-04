@@ -1,4 +1,4 @@
-package cps406;
+
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -45,7 +45,7 @@ public class memberViewer extends JFrame {
 		JButton btnNewButton = new JButton("View Fees");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//new Fees().setVisible(true);
+				new Fees().setVisible(true);
 				//new memberViewer().lblName.setText("Hello");
 				setVisible(false);
 			}
