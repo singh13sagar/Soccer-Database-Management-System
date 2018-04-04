@@ -96,6 +96,11 @@ public class Member implements Comparable<Member>{
 	}
 	
 	
+	public String getName()
+	{
+		return Fname + " " + Lname;
+	}
+	
 	public String getFName(){
 		return Fname;
 	}
