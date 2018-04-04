@@ -15,18 +15,6 @@ public class Member implements Comparable<Member>{
 	private String Message;
 	
 	
-	public static void main(String[] args){  // htis method is for testing only, please remove
-		Member member = new Member ("Prabagar", "Sivakumar");
-		member.setNumber("647-555-5555");
-		member.setPaymentStatus(true);
-		member.setAddress("Somewhere in Scarborough");
-		member.setMessage("New message");
-		member.addMember();
-
-	}
-	
-	
-	
 	public Member(String Fname, String Lname) 
 	{
 		this.Fname = Fname;
@@ -64,10 +52,6 @@ public class Member implements Comparable<Member>{
 		else return "Not enrolled";
 	}
 	
-	public String getName()
-	{
-		return Fname + " " + Lname;
-	}
 	
 	public int getPractices()
 	{
@@ -93,7 +77,16 @@ public class Member implements Comparable<Member>{
 		else return 0;
 	}
 	
-    public String getNumber(){
+	
+	public String getFName(){
+		return Fname;
+	}
+
+	public String getLName(){
+		return Lname;
+	}
+
+	public String getNumber(){
 		return phoneNumber;
 	}
 
@@ -116,8 +109,14 @@ public class Member implements Comparable<Member>{
 	public void addMember(){     //add log of member to textfile containing member logs
 		
 		try{
-		PrintWriter writer = new PrintWriter ("logfile.txt" , "UTF-8");
-		writer.println(getName() + " " + getNumber() + " " + getPaymentStatus() + " " + getAddress() + " " + getMessage() );
+		FileWriter writer = new FileWriter ("logfile.txt" , true);  
+		writer.write(getFName() + " " + getLName()+ "\n"); 
+		writer.write(getNumber()+ "\n");
+		writer.write(getPaymentStatus()+ "\n");
+		writer.write(getAddress()+ "\n");
+		writer.write(getMessage()+ "\n");
+		writer.write("" + "\n");
+		writer.flush();
 		writer.close();
 		}catch(FileNotFoundException e){
 			System.out.println("File not found.");
