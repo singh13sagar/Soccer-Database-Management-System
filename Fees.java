@@ -1,4 +1,5 @@
-//compilethis
+//compile this
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -6,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 public class Fees extends JFrame {
 
@@ -41,6 +43,17 @@ public class Fees extends JFrame {
 		JButton btnNewButton = new JButton("New button");
 		btnNewButton.setBounds(190, 158, 117, 25);
 		contentPane.add(btnNewButton);
+		
+		JLabel lbl1 = new JLabel("Your outstanding balance is:");
+		lbl1.setBounds(29, 65, 233, 15);
+		contentPane.add(lbl1);
+		
+		JLabel lblPrice = new JLabel("$500");
+		lblPrice.setBounds(248, 65, 70, 15);
+		contentPane.add(lblPrice);
+		
+		JButton btnNewButton_1 = new JButton("Pay");
+		btnNewButton_1.setBounds(302, 60, 79, 25);
+		contentPane.add(btnNewButton_1);
 	}
-
 }
