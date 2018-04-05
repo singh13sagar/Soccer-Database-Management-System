@@ -1,20 +1,27 @@
+import java.util.*;
 public class Account
 {
     private int feeDue;
-    private Member member;
+    //private Member member;
     public Account()
     {
-        this.member=null;
-        feeDue=0;
+        //this.member=null;
+        Random ran = new Random();
+//int x = ran.nextInt(6) + 5;
+        feeDue= ran.nextInt(6) + 100;
     }
 
-    public Account(Member m)
+    /*public Account(Member m)
     {
         member=m;
-    }
-    public void setMember(Member m)
+    }*/
+   /* public void setMember(Member m)
     {
         member=m;
+    }*/
+    public int getDuefee()
+    {
+        return feeDue;
     }
     public void deposit(int ammount)
     {

@@ -51,7 +51,8 @@ public class Fees extends JFrame {
 		lbl1.setBounds(29, 65, 233, 15);
 		contentPane.add(lbl1);
 		
-		JLabel lblPrice = new JLabel("$500");
+		String temp = Integer.toString(mainMember.getDuefee());
+		JLabel lblPrice = new JLabel(temp);
 		lblPrice.setBounds(248, 65, 70, 15);
 		contentPane.add(lblPrice);
 		

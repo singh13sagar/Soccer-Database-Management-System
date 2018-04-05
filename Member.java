@@ -13,13 +13,18 @@ public class Member implements Comparable<Member>{
 	private boolean paid;
 	private String activity;
 	private String Message;
-	
+	private int feeDue;
+	//private Account account;
 	
 	
 	public Member()
 	{
 		this.Fname = "";
 		this.Lname = "";
+		//account = new Account();
+		Random ran = new Random();
+		feeDue = ran.nextInt(6) + 100;
+	
 	}
 	public Member(String Fname, String Lname) 
 	{
@@ -29,6 +34,9 @@ public class Member implements Comparable<Member>{
 		timesPaid = 0;
 		pAttended = rand.nextInt(10); // debug
 		timesPaid = rand.nextInt(10); // debug
+		//account = new Account();
+		Random ran = new Random();
+		feeDue = ran.nextInt(6) + 100;
 	}
 	
     public void setNumber(String num){
@@ -45,9 +53,6 @@ public class Member implements Comparable<Member>{
 		else
 			paid = false;
 	}
-
-
-
 
 	public void setAddress(String address){
         Address = address;
@@ -148,5 +153,30 @@ public class Member implements Comparable<Member>{
 		}
 	}
 	
+	public int getDuefee() {
+		return feeDue;
+	}
+
+	public void deposit(int ammount) {
+		if (ammount > feeDue)
+			feeDue = 0;
+		else
+			feeDue -= ammount;
+	}
+
+	public boolean anyDue() {
+		if (feeDue == 0)
+			return false;
+		else
+			return true;
+	}
+
+
+
+
+
+
+
+
 	
 }
