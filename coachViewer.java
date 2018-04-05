@@ -63,6 +63,8 @@ public class coachViewer extends JFrame {
 				panel.add(label);
 				panel.add(memeberName);
 				String[] options = new String[]{"OK", "Cancel"};
+				JOptionPane.showMessageDialog(panel, "Type the firstname follwed by a space and the lastname to delete a member");
+
 				int select = JOptionPane.showOptionDialog(null, panel, "Delete Member",
 				                         JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
 				                         null, options, options[1]);
@@ -106,11 +108,10 @@ public class coachViewer extends JFrame {
 					 
 					 
 					 
-					 }catch(FileNotFoundException ex){
+					 } catch(FileNotFoundException  ex){
 						 System.out.println("File not found");
-					 }catch(IOException ex){
-						 System.out.println(ex);
-					 }
+						}
+				
 				}
 			
 			
@@ -122,5 +123,16 @@ public class coachViewer extends JFrame {
 		JButton btnNewButton = new JButton("Notify Member");
 		btnNewButton.setBounds(498, 97, 147, 25);
 		contentPane.add(btnNewButton);
+
+		JButton btnNewButton_1 = new JButton("<--");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new club().setVisible(true);
+				setVisible(false);
+
+			}
+		});
+		btnNewButton_1.setBounds(25, 12, 54, 25);
+		contentPane.add(btnNewButton_1);
 	}
 }
