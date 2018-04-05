@@ -10,10 +10,10 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class memberViewer extends JFrame {
+public class memberViewer extends JFrame {// See i made changes here you will see it
 
 	private JPanel contentPane;
-
+	public JLabel lblName;
 	/**
 	 * Launch the application.
 	 */
@@ -33,7 +33,7 @@ public class memberViewer extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public memberViewer() {
+	public memberViewer(String name) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 576, 300);
 		contentPane = new JPanel();
@@ -44,7 +44,10 @@ public class memberViewer extends JFrame {
 		JButton btnNewButton = new JButton("View Fees");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Fees().setVisible(true);
+				Fees memberFee = new Fees();
+ -				memberFee.setVisible(true);
+ -				//new Fees().setVisible(true);
+ +				new Fees().setVisible(true);
 				//new memberViewer().lblName.setText("Hello");
 				setVisible(false);
 			}
@@ -60,6 +63,7 @@ public class memberViewer extends JFrame {
 		btnNewButton_2.setBounds(366, 107, 150, 25);
 		contentPane.add(btnNewButton_2);
 		
+		lblName = new JLabel("Hello");
 		JLabel lblName = new JLabel("Hello User");
 		lblName.setBounds(27, 41, 103, 15);
 		contentPane.add(lblName);
