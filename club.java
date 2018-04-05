@@ -86,8 +86,8 @@ public class club extends JFrame {
 				JLabel label = new JLabel("Enter Member Name:");
 				JLabel label2 = new JLabel("Enter Password:");
 				
-				JTextField memeberName = new JPasswordField(10);
-				JPasswordField passwordBox = new JPasswordField(10);
+				JTextField memeberName = new JTextField(15);
+				JPasswordField passwordBox = new JPasswordField(15);
 				panel.add(label);
 				panel.add(passwordBox);
 				panel.add(label2);
@@ -104,10 +104,10 @@ public class club extends JFrame {
 					{
 						temp=mList.Members.get(0);
 						if(temp.getName()==memName)
-							i=mList.Members.size()+1;
+							i=mList.Members.size()+1; // top get out of loop
 					}
 				 
-						memberViewer mView = new memberViewer(temp.getName());
+						memberViewer mView = new memberViewer(temp);
 						//mView.lblName.setText("Hello" + temp.getName());
 						mView.setVisible(true);
 
