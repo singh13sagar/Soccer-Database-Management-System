@@ -12,15 +12,16 @@ public class Treasurer {
 	}
 
 
-
-	public void profit() {
+ 		
+	public String profit() {
 
 		double revenue = 0;
 		double expenses = 0;
 		double unPaid = 0;
 		double rent = 1000;
 		double coachesWage = getHoursWorked();
-
+		double profit = 0;
+		String output = "";
 
 
 		for(Members m : m.Members)
@@ -30,13 +31,27 @@ public class Treasurer {
 		}
 
 		expenses = unPaid + rent + coachesWage;
+		profit = revenue - expenses;
 
-		System.out.println("Revenue: $" + revenue )
+		output = " Revenue: $" + revenue + "\n" + "Expenses: " + "\n" + "Rent: $" + rent + "\n" + "Coach Wages: $" + coachesWage + "\n" + "UnPaid Fees: $" + UnPaid + "\n" + "Total Expenses: $ " + expenses + "\n" + "Profit: $" + profit; 
+
+	 return output;
+
 
 	}
 
 
+	public void ViewMembers() {
 
+
+	m.paySort(); 
+
+	for(Members m : m.Members)
+
+		System.out.println(m.Members);
+
+
+	}
 	
 
 }
