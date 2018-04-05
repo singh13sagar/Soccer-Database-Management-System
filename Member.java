@@ -50,6 +50,10 @@ public class Member implements Comparable<Member>{
 		else
 			paid=false;
 	}
+	public String getName()
+ -	{
+ -		return Fname + " " + Lname;
+ -	}
 
 	public void setAddress(String address){
         Address = address;

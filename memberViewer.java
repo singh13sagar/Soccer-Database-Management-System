@@ -35,7 +35,7 @@ public class memberViewer extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public memberViewer() {
+	public memberViewer(String name) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 576, 300);
 		contentPane = new JPanel();
@@ -46,7 +46,10 @@ public class memberViewer extends JFrame {
 		JButton btnNewButton = new JButton("View Fees");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Fees().setVisible(true);
+				
+				Fees memberFee = new Fees();
+				memberFee.setVisible(true);
+				//new Fees().setVisible(true);
 				//new memberViewer().lblName.setText("Hello");
 				setVisible(false);
 			}
