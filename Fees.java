@@ -1,4 +1,3 @@
-//compile this
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -8,11 +7,12 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Fees extends JFrame {
 
 	private JPanel contentPane;
-	private Member user;
 
 	/**
 	 * Launch the application.
@@ -34,8 +34,6 @@ public class Fees extends JFrame {
 	 * Create the frame.
 	 */
 	public Fees() {
-		//user = mem;
-
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -58,5 +56,19 @@ public class Fees extends JFrame {
 		JButton btnNewButton_1 = new JButton("Pay");
 		btnNewButton_1.setBounds(302, 60, 79, 25);
 		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("<--");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new memberViewer().setVisible(true);
+				setVisible(false);
+
+			}
+			
+		});
+		btnNewButton_2.setBounds(382, 12, 54, 25);
+		contentPane.add(btnNewButton_2);
+
+		
 	}
 }
