@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 public class Fees extends JFrame {
 
 	private JPanel contentPane;
-	
+	private Member user;
 	/**
 	 * Launch the application.
 	 */
@@ -60,7 +60,7 @@ public class Fees extends JFrame {
 		JButton btnNewButton_2 = new JButton("<--");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new memberViewer().setVisible(true);
+				new memberViewer("Try for now").setVisible(true);
 				setVisible(false);
 
 			}

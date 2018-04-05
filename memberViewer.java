@@ -45,8 +45,8 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 		JButton btnNewButton = new JButton("View Fees");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Fees memberFee = new Fees();
- -				memberFee.setVisible(true);
+				Fees membeFee = new Fees();
+				membeFee.setVisible(true);
 				//new memberViewer().lblName.setText("Hello");
 				setVisible(false);
 			}
