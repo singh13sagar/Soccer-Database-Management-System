@@ -14,14 +14,14 @@ import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class treasurerViewer1 extends JFrame {
-	MemberList m;
+public class treasurerViewer3 extends JFrame {
+	private MemberList m;
 	private JPanel contentPane;
 
 	/**
 	 * Create the frame.
 	 */
-	public treasurerViewer1(MemberList m) {
+	public treasurerViewer3(MemberList m) {
 		this.m = m;
 		setTitle("Treasurer Managment");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,8 +30,6 @@ public class treasurerViewer1 extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		
 		
 		List list = new List();
 		list.setBounds(82, 10, 191, 181);
@@ -47,7 +45,6 @@ public class treasurerViewer1 extends JFrame {
 		});
 		button.setBounds(12, 10, 58, 36);
 		contentPane.add(button);
-		
 		
 		Button button_1 = new Button("New button");
 		button_1.addActionListener(new ActionListener() {

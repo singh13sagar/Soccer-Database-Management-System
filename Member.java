@@ -50,6 +50,13 @@ public class Member implements Comparable<Member>{
 		phoneNumber = num;
 	}
 
+	public void setFirstName(String fnamee){
+		Fname = fnamee;
+	}
+	public void setLastName(String lnamee){
+		Lname = lnamee;
+	}
+
 	public void setPaymentStatus(boolean status){
 		paid = status;
 	}
@@ -89,7 +96,7 @@ public class Member implements Comparable<Member>{
 	public String toString()
 	{
 		String out = "";
-		out = Fname+" "+Lname+" "+" Practices: "+ pAttended +" Times Paid: "+ timesPaid +" Activity: " + printActivity() ;
+		out = Fname+" "+Lname+" "+" Times Paid: " + timesPaid;
 		return out; 
 	}
 	

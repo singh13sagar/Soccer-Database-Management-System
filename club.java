@@ -46,6 +46,13 @@ public class club extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Treasurer");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				treasurerViewer tView = new treasurerViewer(mList);
+				tView.setVisible(true);
+				setVisible(false);
+			}
+		});
 		btnNewButton.setBounds(172, 12, 117, 25);
 		contentPane.add(btnNewButton);
 		
@@ -68,7 +75,7 @@ public class club extends JFrame {
 				    String passCompare = String.copyValueOf(coachPass);
 
 				    if (passCompare.equals(password)){
-						new coachViewer().setVisible(true);
+						new coachViewer(mList).setVisible(true);
 						setVisible(false);
 				    }
 				    
@@ -89,9 +96,9 @@ public class club extends JFrame {
 				JTextField memeberName = new JTextField(15);
 				JPasswordField passwordBox = new JPasswordField(15);
 				panel.add(label);
-				panel.add(passwordBox);
-				panel.add(label2);
 				panel.add(memeberName);
+				panel.add(label2);
+				panel.add(passwordBox);
 				String[] options = new String[]{"OK", "Cancel"};
 				int select = JOptionPane.showOptionDialog(null, panel, "Coach Validation",
 				                         JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
@@ -102,11 +109,12 @@ public class club extends JFrame {
 					Member temp = new Member();
 					for(int i=0; i<mList.Members.size();i++)
 					{
-						temp=mList.Members.get(0);
-						if(temp.getName()==memName)
+						temp=mList.getMember(i);
+						
+						if(temp.getName().equals(memName))
 							i=mList.Members.size()+1; // top get out of loop
 					}
-				 
+						
 						memberViewer mView = new memberViewer(temp);
 						//mView.lblName.setText("Hello" + temp.getName());
 						mView.setVisible(true);

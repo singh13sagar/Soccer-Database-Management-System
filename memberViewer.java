@@ -61,10 +61,26 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Display Statement");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DisplayStat stat = new DisplayStat(mainMemeber);
+				stat.setVisible(true);
+				//new memberViewer().lblName.setText("Hello");
+				setVisible(false);
+			}
+		});
 		btnNewButton_1.setBounds(174, 107, 180, 25);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Notifications");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				notificationViewer notification = new notificationViewer(mainMemeber);
+				notification.setVisible(true);
+				//new memberViewer().lblName.setText("Hello");
+				setVisible(false);
+			}
+		});
 		btnNewButton_2.setBounds(366, 107, 150, 25);
 		contentPane.add(btnNewButton_2);
 		

@@ -14,7 +14,10 @@ public class MemberList {
 	{
 		Members.add(m);
 	}
-	
+	public Member getMember(int index) // get memmber by index
+	{
+		return Members.get(index);
+	}
 	public void removeMember(Member m)
 	{
 		Members.remove(m);
@@ -31,12 +34,14 @@ public class MemberList {
 		Collections.sort(Members);
 	}
 	
-	public void printList()
+	public String printList()
 	{
+		String list = "";
 		for(Member m : Members)
 		{
-			System.out.println(m.toString());
+			list += m.toString() + " \n";
 		}
+		return list;
 	}
 	
 	public void paySort()

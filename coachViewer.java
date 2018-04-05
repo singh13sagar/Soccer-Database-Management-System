@@ -20,26 +20,37 @@ public class coachViewer extends JFrame {
 
 	private JPanel contentPane;
 
+
+	private MemberList mList;
+
+	/*
+	public static void main(String[] args) {
+=======
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
+>>>>>>> d1243f1549a401314664270da0c7ce301cc3e209
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					coachViewer frame = new coachViewer();
+					coachViewer frame = new coachViewer(MemberList mem);
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					e.printStackTrace(); 
 				}
 			}
 		});
-	}
+	}*/
+
+	
 
 	/**
 	 * Create the frame.
 	 */
-	public coachViewer() {
+	public coachViewer(MemberList mem) {
+		mList=mem;
+
 		setTitle("Coach Viewer");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 659, 300);
@@ -49,6 +60,35 @@ public class coachViewer extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton_4 = new JButton("Add Member");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JPanel panel = new JPanel();
+				JLabel label = new JLabel("Enter Member Name:");
+				JTextField memeberName = new JTextField(10);
+				panel.add(label);
+				panel.add(memeberName);
+				String[] options = new String[]{"OK", "Cancel"};
+				JOptionPane.showMessageDialog(panel, "Type the firstname follwed by a space and the lastname to add a member");
+				int select = JOptionPane.showOptionDialog(null, panel, "Add Member",
+				                         JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
+				                         null, options, options[1]);
+				if(select == 0) 
+				{
+				     String memName = memeberName.getText(); //gets memberName
+				     String[] splitMemberaName = memName.split("\\s+");
+					 //System.out.println(memName);
+					 //System.out.println(splitMemberaName[0]);
+					 //System.out.println(splitMemberaName[1]);
+
+					 Member tempMem= new Member();
+					 tempMem.setFirstName(splitMemberaName[0]);
+					 tempMem.setLastName(splitMemberaName[1]);
+ 					 mList.addMember(tempMem);
+ 					 JOptionPane.showMessageDialog(panel, "Member has been added.");
+				    
+				}
+			}
+		});
 		btnNewButton_4.setBounds(171, 97, 147, 25);
 		contentPane.add(btnNewButton_4);
 		
@@ -70,48 +110,20 @@ public class coachViewer extends JFrame {
 				                         null, options, options[1]);
 				if(select == 0) 
 				{
-				    String memName = memeberName.getText(); //gets memberName
-					 
-				
-					 try{
-					 
-				     
-				     
-				     
+				    String memName = memeberName.getText();
+					Member temp = new Member();
+					for(int i=0; i<mList.Members.size();i++)
+					{
+						temp=mList.getMember(i);
+						
+						if(temp.getName().equals(memName))
+							mList.removeMember(temp);
+							i=mList.Members.size()+1; // top get out of loop
+					}
+					JOptionPane.showMessageDialog(panel, "Member has been deleted.");
+						
 					
-				     Scanner scanner = new Scanner(new File("logfile.txt"));
-				     
-				     List<String> lines = new ArrayList<String>();
-					 while(scanner.hasNextLine()){
-						 
-						 lines.add(scanner.nextLine());
-						 
-					 }
 					 
-					 for(int i = 0; i < lines.size(); i++) {   
-						    if(lines.get(i).equals(memName.trim())){
-						    	for(int it = 0;it < 6; it++){
-						    		lines.remove(i);
-						    	}
-						    }
-						} 
-					 
-					 
-                     Iterator<String> iterator = lines.iterator();
-                     PrintWriter writer = new PrintWriter("logfile.txt");
-                     while(iterator.hasNext()){
-						 writer.write(iterator.next() + "\n");
-					 }
-					 
-					
-					 writer.close();
-					 
-					 
-					 
-					 } catch(FileNotFoundException  ex){
-						 System.out.println("File not found");
-						}
-				
 				}
 			
 			
