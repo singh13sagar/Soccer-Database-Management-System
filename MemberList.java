@@ -14,7 +14,10 @@ public class MemberList {
 	{
 		Members.add(m);
 	}
-	
+	public Member getMember(int index) // get memmber by index
+	{
+		return Members.get(index);
+	}
 	public void removeMember(Member m)
 	{
 		Members.remove(m);
