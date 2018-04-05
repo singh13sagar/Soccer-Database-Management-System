@@ -48,7 +48,7 @@ public class club extends JFrame {
 		JButton btnNewButton = new JButton("Treasurer");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				treasurerViewer tView = new treasurerViewer();
+				treasurerViewer tView = new treasurerViewer(mList);
 				tView.setVisible(true);
 				setVisible(false);
 			}

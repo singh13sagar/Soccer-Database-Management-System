@@ -31,12 +31,14 @@ public class MemberList {
 		Collections.sort(Members);
 	}
 	
-	public void printList()
+	public String printList()
 	{
+		String list = "";
 		for(Member m : Members)
 		{
-			System.out.println(m.toString());
+			list += m.toString() + " \n";
 		}
+		return list;
 	}
 	
 	public void paySort()

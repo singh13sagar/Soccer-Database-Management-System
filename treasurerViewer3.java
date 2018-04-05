@@ -15,29 +15,14 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class treasurerViewer3 extends JFrame {
-
+	private MemberList m;
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					treasurerViewer frame = new treasurerViewer();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
-	public treasurerViewer3() {
+	public treasurerViewer3(MemberList m) {
+		this.m = m;
 		setTitle("Treasurer Managment");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -54,7 +39,7 @@ public class treasurerViewer3 extends JFrame {
 		JButton button = new JButton("<-");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-						new treasurerViewer().setVisible(true);
+						new treasurerViewer(m).setVisible(true);
 						setVisible(false);
 			}
 		});
