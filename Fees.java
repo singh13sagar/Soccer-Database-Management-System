@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 public class Fees extends JFrame {
 
 	private JPanel contentPane;
-
+	
 	/**
 	 * Launch the application.
 	 */

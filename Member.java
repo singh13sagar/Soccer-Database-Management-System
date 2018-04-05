@@ -16,6 +16,11 @@ public class Member implements Comparable<Member>{
 	
 	
 	
+	public Member()
+	{
+		this.Fname = "";
+		this.Lname = "";
+	}
 	public Member(String Fname, String Lname) 
 	{
 		this.Fname = Fname;
@@ -33,10 +38,16 @@ public class Member implements Comparable<Member>{
 	public void setPaymentStatus(boolean status){
 		paid = status;
 	}
-	public String getName()
- -	{
- -		return Fname + " " + Lname;
- -	}
+	
+	public void setPaymentStatus(String status) {
+		if(status.length()==4)
+			paid = true;
+		else
+			paid = false;
+	}
+
+
+
 
 	public void setAddress(String address){
         Address = address;
@@ -98,7 +109,11 @@ public class Member implements Comparable<Member>{
 		return phoneNumber;
 	}
 
-    public String getPaymentStatus(){
+	
+
+	
+	
+	public String getPaymentStatus(){
 		
 		if(paid == true)
 		  return "paid";

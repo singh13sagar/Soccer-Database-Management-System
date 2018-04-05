@@ -15,9 +15,9 @@ public class club extends JFrame {
 
 	private JPanel contentPane;
 	//private ArrayList<Member> list_Member;
-	public ArrayList<Member> mList;
-
-
+	//public ArrayList<Member> mList;
+	public MemberList mList;
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -33,7 +33,9 @@ public class club extends JFrame {
 	}
 
 	public club() {
-		mList= new ArrayList<>();
+		//mList= new ArrayList<>();
+		mList = new MemberList();
+
 		this.read_Users();
 		setTitle("Memeber Management System");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -98,11 +100,11 @@ public class club extends JFrame {
 				{
 					String memName = memeberName.getText();
 					Member temp = new Member();
-					for(int i=0; i<mList.size();i++)
+					for(int i=0; i<mList.Members.size();i++)
 					{
-						temp=mList.get(0);
+						temp=mList.Members.get(0);
 						if(temp.getName()==memName)
-							i=mList.size()+1;
+							i=mList.Members.size()+1;
 					}
 				 
 						memberViewer mView = new memberViewer(temp.getName());
@@ -148,7 +150,7 @@ public class club extends JFrame {
 			//System.out.println(temp.toString());
 			if(in.hasNextLine())
 				bin= in.nextLine();
-			mList.add(temp);
+			mList.addMember(temp);
 
 		}
 		in.close();

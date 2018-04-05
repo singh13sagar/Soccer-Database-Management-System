@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class MemberList {
-	private ArrayList<Member> Members;
+	public ArrayList<Member> Members;
 	
 	public MemberList()
 	{
