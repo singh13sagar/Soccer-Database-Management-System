@@ -20,26 +20,30 @@ public class coachViewer extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
+	private MemberList mList;
+
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					coachViewer frame = new coachViewer();
+					coachViewer frame = new coachViewer(MemberList mem);
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					e.printStackTrace(); 
 				}
 			}
 		});
 	}
 
+	*/
+
 	/**
 	 * Create the frame.
 	 */
-	public coachViewer() {
+	public coachViewer(MemberList mem) {
+		mList=mem;
+
 		setTitle("Coach Viewer");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 659, 300);
@@ -49,6 +53,34 @@ public class coachViewer extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton_4 = new JButton("Add Member");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JPanel panel = new JPanel();
+				JLabel label = new JLabel("Enter Member Name:");
+				JTextField memeberName = new JTextField(10);
+				panel.add(label);
+				panel.add(memeberName);
+				String[] options = new String[]{"OK", "Cancel"};
+				JOptionPane.showMessageDialog(panel, "Type the firstname follwed by a space and the lastname to add a member");
+				int select = JOptionPane.showOptionDialog(null, panel, "Add Member",
+				                         JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
+				                         null, options, options[1]);
+				if(select == 0) 
+				{
+				     String memName = memeberName.getText(); //gets memberName
+				     String[] splitMemberaName = memName.split("\\s+");
+					 System.out.println(memName);
+					 System.out.println(splitMemberaName[0]);
+					 System.out.println(splitMemberaName[1]);
+
+					 Member tempMem= new Member();
+					 tempMem.setFirstName(splitMemberaName[0]);
+					 tempMem.setLastName(splitMemberaName[1]);
+ 					 mList.addMember(tempMem);
+				    
+				}
+			}
+		});
 		btnNewButton_4.setBounds(171, 97, 147, 25);
 		contentPane.add(btnNewButton_4);
 		
