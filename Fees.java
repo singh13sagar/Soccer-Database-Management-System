@@ -13,11 +13,11 @@ import java.awt.event.ActionEvent;
 public class Fees extends JFrame {
 
 	private JPanel contentPane;
-	private Member user;
+	private Member mainMember;
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -28,12 +28,14 @@ public class Fees extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
 	 */
-	public Fees() {
+	public Fees(Member mem) {
+		mainMember=mem;
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -60,7 +62,9 @@ public class Fees extends JFrame {
 		JButton btnNewButton_2 = new JButton("<--");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new memberViewer("Try for now").setVisible(true);
+				memberViewer temp = new memberViewer(mainMember);
+				temp.setVisible(true);
+				//new memberViewer("Try for now").setVisible(true);
 				setVisible(false);
 
 			}

@@ -107,7 +107,7 @@ public class club extends JFrame {
 							i=mList.Members.size()+1;
 					}
 				 
-						memberViewer mView = new memberViewer(temp.getName());
+						memberViewer mView = new memberViewer(temp);
 						//mView.lblName.setText("Hello" + temp.getName());
 						mView.setVisible(true);
 

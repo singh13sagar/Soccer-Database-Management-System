@@ -15,10 +15,11 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 	//fuckthisshit
 	private JPanel contentPane;
 	public JLabel lblName;
+	public Member mainMemeber;
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -29,12 +30,17 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
 	 */
-	public memberViewer(String name) {
+	public memberViewer(Member mem) {
+		
+		mainMemeber=mem;
+
+
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 576, 300);
 		contentPane = new JPanel();
@@ -45,7 +51,7 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 		JButton btnNewButton = new JButton("View Fees");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Fees membeFee = new Fees();
+				Fees membeFee = new Fees(mainMemeber);
 				membeFee.setVisible(true);
 				//new memberViewer().lblName.setText("Hello");
 				setVisible(false);
@@ -62,8 +68,8 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 		btnNewButton_2.setBounds(366, 107, 150, 25);
 		contentPane.add(btnNewButton_2);
 		
-		lblName = new JLabel("Hello");
-		JLabel lblName = new JLabel("Hello User");
+		lblName = new JLabel("Hello"+mainMemeber.getName());
+		//JLabel lblName = new JLabel("Hello User");
 		lblName.setBounds(27, 41, 103, 15);
 		contentPane.add(lblName);
 
