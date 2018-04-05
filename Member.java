@@ -50,6 +50,13 @@ public class Member implements Comparable<Member>{
 		phoneNumber = num;
 	}
 
+	public void setFirstName(String fnamee){
+		Fname = fnamee;
+	}
+	public void setLastName(String lnamee){
+		Lname = lnamee;
+	}
+
 	public void setPaymentStatus(boolean status){
 		paid = status;
 	}
