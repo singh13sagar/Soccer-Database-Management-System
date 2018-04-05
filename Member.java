@@ -2,8 +2,8 @@ import java.util.Random; // debug
 import java.io.*;
 
 public class Member implements Comparable<Member>{
-	private String Fname;
-	private String Lname;
+	public String Fname;
+	public String Lname;
 	private int pAttended; // # of practices attended
 	private String Address;
 	private int pBalance; // payment balance
