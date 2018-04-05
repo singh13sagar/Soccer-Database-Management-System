@@ -22,7 +22,7 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					memberViewer frame = new memberViewer();
+					memberViewer frame = new memberViewer("try");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,8 +47,6 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 			public void actionPerformed(ActionEvent e) {
 				Fees memberFee = new Fees();
  -				memberFee.setVisible(true);
- -				//new Fees().setVisible(true);
- +				new Fees().setVisible(true);
 				//new memberViewer().lblName.setText("Hello");
 				setVisible(false);
 			}
