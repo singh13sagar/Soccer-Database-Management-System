@@ -1,3 +1,5 @@
+
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -6,6 +8,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Color;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class notificationViewer extends JFrame {
 
@@ -51,5 +56,15 @@ public class notificationViewer extends JFrame {
 		JLabel label_1 = new JLabel("     Messages");
 		label_1.setBounds(92, 98, 239, 36);
 		contentPane.add(label_1);
+		
+		JButton btnNewButton = new JButton("<--");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//new memberViewer().setVisible(true);
+				//setVisible(false);
+			}
+		});
+		btnNewButton.setBounds(331, 12, 86, 25);
+		contentPane.add(btnNewButton);
 	}
 }
