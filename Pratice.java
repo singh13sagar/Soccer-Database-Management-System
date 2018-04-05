@@ -8,7 +8,7 @@ public class Pratice {
 	
 	public Pratice(String activity, MemberList m)
 	{
-		coach = new Coach();
+		//coach = new Coach();
 		this.activity = activity;
 	}
 	

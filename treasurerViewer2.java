@@ -46,44 +46,20 @@ public class treasurerViewer2 extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("View Finances");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton.setBounds(279, 23, 157, 36);
-		contentPane.add(btnNewButton);
-		
 		List list = new List();
 		list.setBounds(82, 10, 191, 181);
 		contentPane.add(list);
 		
-		JButton btnViewMembers = new JButton("View Members");
-		btnViewMembers.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnViewMembers.setBounds(279, 86, 157, 36);
-		contentPane.add(btnViewMembers);
 		
-		JButton btnCoachExpenses = new JButton("Coach Expenses");
-		btnCoachExpenses.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnCoachExpenses.setBounds(279, 144, 157, 36);
-		contentPane.add(btnCoachExpenses);
-		
-		/* JButton button = new JButton("<-");
+		JButton button = new JButton("<-");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-						new club().setVisible(true);
+						new treasurerViewer().setVisible(true);
 						setVisible(false);
 			}
 		});
 		button.setBounds(12, 10, 58, 36);
 		contentPane.add(button);
-		*/
 		
 		Button button_1 = new Button("New button");
 		button_1.addActionListener(new ActionListener() {
