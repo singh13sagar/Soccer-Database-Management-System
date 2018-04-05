@@ -76,14 +76,15 @@ public class coachViewer extends JFrame {
 				{
 				     String memName = memeberName.getText(); //gets memberName
 				     String[] splitMemberaName = memName.split("\\s+");
-					 System.out.println(memName);
-					 System.out.println(splitMemberaName[0]);
-					 System.out.println(splitMemberaName[1]);
+					 //System.out.println(memName);
+					 //System.out.println(splitMemberaName[0]);
+					 //System.out.println(splitMemberaName[1]);
 
 					 Member tempMem= new Member();
 					 tempMem.setFirstName(splitMemberaName[0]);
 					 tempMem.setLastName(splitMemberaName[1]);
  					 mList.addMember(tempMem);
+ 					 JOptionPane.showMessageDialog(panel, "Member has been added.");
 				    
 				}
 			}
@@ -119,14 +120,9 @@ public class coachViewer extends JFrame {
 							mList.removeMember(temp);
 							i=mList.Members.size()+1; // top get out of loop
 					}
+					JOptionPane.showMessageDialog(panel, "Member has been deleted.");
 						
-						memberViewer mView = new memberViewer(temp);
-						//mView.lblName.setText("Hello" + temp.getName());
-						mView.setVisible(true);
-
-						//new memberViewer().lblName.setText("Hello"+temp.getName());
-						
-						setVisible(false);
+					
 					 
 				}
 			
