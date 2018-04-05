@@ -46,6 +46,13 @@ public class club extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Treasurer");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				treasurerViewer tView = new treasurerViewer();
+				tView.setVisible(true);
+				setVisible(false);
+			}
+		});
 		btnNewButton.setBounds(172, 12, 117, 25);
 		contentPane.add(btnNewButton);
 		
