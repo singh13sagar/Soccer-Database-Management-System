@@ -96,7 +96,7 @@ public class Member implements Comparable<Member>{
 	public String toString()
 	{
 		String out = "";
-		out = Fname+" "+Lname+" "+" Practices: "+ pAttended +" Times Paid: "+ timesPaid +" Activity: " + printActivity() ;
+		out = Fname+" "+Lname+" "+" Times Paid: " + timesPaid;
 		return out; 
 	}
 	

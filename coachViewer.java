@@ -20,10 +20,17 @@ public class coachViewer extends JFrame {
 
 	private JPanel contentPane;
 
+<<<<<<< HEAD
 	private MemberList mList;
 
 	/*
 	public static void main(String[] args) {
+=======
+	/**
+	 * Launch the application.
+	 */
+	/*public static void main(String[] args) {
+>>>>>>> d1243f1549a401314664270da0c7ce301cc3e209
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -34,7 +41,7 @@ public class coachViewer extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	*/
 

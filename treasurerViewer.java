@@ -15,29 +15,14 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class treasurerViewer extends JFrame {
-
+	private MemberList m;
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					treasurerViewer frame = new treasurerViewer();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
-	public treasurerViewer() {
+	public treasurerViewer(MemberList m) {
+		this.m = m;
 		setTitle("Treasurer Managment");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 250, 300);
@@ -49,7 +34,7 @@ public class treasurerViewer extends JFrame {
 		JButton btnNewButton = new JButton("View Finances");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				treasurerViewer1 vFinance = new treasurerViewer1();
+				treasurerViewer1 vFinance = new treasurerViewer1(m);
 				vFinance.setVisible(true);
 				setVisible(false);
 			}
@@ -61,7 +46,7 @@ public class treasurerViewer extends JFrame {
 		JButton btnViewMembers = new JButton("View Members");
 		btnViewMembers.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				treasurerViewer2 vMembers = new treasurerViewer2();
+				treasurerViewer2 vMembers = new treasurerViewer2(m);
 				vMembers.setVisible(true);
 				setVisible(false);
 			}
@@ -72,7 +57,7 @@ public class treasurerViewer extends JFrame {
 		JButton btnCoachExpenses = new JButton("Coach Expenses");
 		btnCoachExpenses.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				treasurerViewer3 vCoach = new treasurerViewer3();
+				treasurerViewer3 vCoach = new treasurerViewer3(m);
 				vCoach.setVisible(true);
 				setVisible(false);
 			}

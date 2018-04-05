@@ -15,11 +15,11 @@ import java.awt.event.ActionEvent;
 public class notificationViewer extends JFrame {
 
 	private JPanel contentPane;
-
+	private Member mainMember;
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -30,12 +30,13 @@ public class notificationViewer extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
 	 */
-	public notificationViewer() {
+	public notificationViewer(Member mem) {
+		mainMember=mem;
 		setTitle("Notification");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -53,15 +54,16 @@ public class notificationViewer extends JFrame {
 		label.setBounds(82, 48, 122, 36);
 		contentPane.add(label);
 		
-		JLabel label_1 = new JLabel("     Messages");
+		JLabel label_1 = new JLabel(mainMember.getMessage());
 		label_1.setBounds(92, 98, 239, 36);
 		contentPane.add(label_1);
 		
 		JButton btnNewButton = new JButton("<--");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//new memberViewer().setVisible(true);
-				//setVisible(false);
+				memberViewer temp = new memberViewer(mainMember);
+				temp.setVisible(true);
+				setVisible(false);
 			}
 		});
 		btnNewButton.setBounds(331, 12, 86, 25);
