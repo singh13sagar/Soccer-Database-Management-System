@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -14,6 +15,8 @@ public class Fees extends JFrame {
 
 	private JPanel contentPane;
 	private Member mainMember;
+	private JTextField ammountField;
+	private JLabel lblPrice;
 	/**
 	 * Launch the application.
 	 */
@@ -52,14 +55,26 @@ public class Fees extends JFrame {
 		contentPane.add(lbl1);
 		
 		String temp = Integer.toString(mainMember.getDuefee());
-		JLabel lblPrice = new JLabel(temp);
+		lblPrice = new JLabel(temp);
 		lblPrice.setBounds(248, 65, 70, 15);
 		contentPane.add(lblPrice);
-		
+
+		ActionListener payIt = new payListener();
+
 		JButton btnNewButton_1 = new JButton("Pay");
-		btnNewButton_1.setBounds(302, 60, 79, 25);
+		btnNewButton_1.addActionListener(payIt);
+		btnNewButton_1.setBounds(275, 60, 79, 25);
 		contentPane.add(btnNewButton_1);
 		
+		
+
+
+
+		ammountField = new JTextField();
+		ammountField.setBounds(365, 60, 79, 25);
+		contentPane.add(ammountField);
+
+
 		JButton btnNewButton_2 = new JButton("<--");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -75,5 +90,18 @@ public class Fees extends JFrame {
 		contentPane.add(btnNewButton_2);
 
 		
+	}
+	class payListener implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e) {
+			
+			mainMember.deposit(Integer.parseInt(ammountField.getText()));
+			//lblPrice.setText(Integer.toString(mainMember.getDuefee()));
+			Fees temp = new Fees(mainMember);
+			temp.setVisible(true);
+			//new memberViewer("Try for now").setVisible(true);
+			setVisible(false);
+
+		}
 	}
 }
