@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random; // debug 
 import java.io.*;
 
@@ -14,6 +15,8 @@ public class Member implements Comparable<Member>{
 	private String activity;
 	private String Message;
 	private int feeDue;
+	private int feeThatPaid;
+	private int feeNotPaid;
 	//private Account account;
 	
 	
@@ -24,6 +27,8 @@ public class Member implements Comparable<Member>{
 		//account = new Account();
 		Random ran = new Random();
 		feeDue = ran.nextInt(6) + 100;
+		feeThatPaid = feeDue+120;
+		feeNotPaid = feeDue;
 	
 	}
 	public Member(String Fname, String Lname) 
@@ -37,6 +42,8 @@ public class Member implements Comparable<Member>{
 		//account = new Account();
 		Random ran = new Random();
 		feeDue = ran.nextInt(6) + 100;
+		feeThatPaid = feeDue - (feeDue / 3);
+		feeNotPaid = feeDue - feeThatPaid;
 	}
 	
     public void setNumber(String num){
@@ -114,7 +121,14 @@ public class Member implements Comparable<Member>{
 		return phoneNumber;
 	}
 
-	
+	public int getPaid()
+	{
+		return feeThatPaid;
+	}
+	public int getUnpaid()
+	{
+		return feeNotPaid;
+	}
 
 	
 	
@@ -158,10 +172,21 @@ public class Member implements Comparable<Member>{
 	}
 
 	public void deposit(int ammount) {
-		if (ammount > feeDue)
-			feeDue = 0;
+		if (ammount >= feeDue)
+			{
+				feeDue = 0;
+				paid=true;
+				feeThatPaid+=feeDue;
+				feeNotPaid=0;
+			}
 		else
-			feeDue -= ammount;
+			{
+				feeDue -= ammount;
+				paid=false;
+				feeThatPaid += ammount;
+				feeNotPaid = feeDue;
+				
+			}
 	}
 
 	public boolean anyDue() {
