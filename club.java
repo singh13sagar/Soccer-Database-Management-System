@@ -75,7 +75,7 @@ public class club extends JFrame {
 				    String passCompare = String.copyValueOf(coachPass);
 
 				    if (passCompare.equals(password)){
-						new coachViewer().setVisible(true);
+						new coachViewer(mList).setVisible(true);
 						setVisible(false);
 				    }
 				    
