@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 
 public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 
+	//fuckthisshit
 	private JPanel contentPane;
 	public JLabel lblName;
 	/**
