@@ -20,7 +20,7 @@ public class coachViewer extends JFrame {
 
 	private JPanel contentPane;
 
-<<<<<<< HEAD
+
 	private MemberList mList;
 
 	/*
@@ -43,7 +43,7 @@ public class coachViewer extends JFrame {
 		});
 	}*/
 
-	*/
+	
 
 	/**
 	 * Create the frame.
@@ -109,48 +109,25 @@ public class coachViewer extends JFrame {
 				                         null, options, options[1]);
 				if(select == 0) 
 				{
-				    String memName = memeberName.getText(); //gets memberName
+				    String memName = memeberName.getText();
+					Member temp = new Member();
+					for(int i=0; i<mList.Members.size();i++)
+					{
+						temp=mList.getMember(i);
+						
+						if(temp.getName().equals(memName))
+							mList.removeMember(temp);
+							i=mList.Members.size()+1; // top get out of loop
+					}
+						
+						memberViewer mView = new memberViewer(temp);
+						//mView.lblName.setText("Hello" + temp.getName());
+						mView.setVisible(true);
+
+						//new memberViewer().lblName.setText("Hello"+temp.getName());
+						
+						setVisible(false);
 					 
-				
-					 try{
-					 
-				     
-				     
-				     
-					
-				     Scanner scanner = new Scanner(new File("logfile.txt"));
-				     
-				     List<String> lines = new ArrayList<String>();
-					 while(scanner.hasNextLine()){
-						 
-						 lines.add(scanner.nextLine());
-						 
-					 }
-					 
-					 for(int i = 0; i < lines.size(); i++) {   
-						    if(lines.get(i).equals(memName.trim())){
-						    	for(int it = 0;it < 6; it++){
-						    		lines.remove(i);
-						    	}
-						    }
-						} 
-					 
-					 
-                     Iterator<String> iterator = lines.iterator();
-                     PrintWriter writer = new PrintWriter("logfile.txt");
-                     while(iterator.hasNext()){
-						 writer.write(iterator.next() + "\n");
-					 }
-					 
-					
-					 writer.close();
-					 
-					 
-					 
-					 } catch(FileNotFoundException  ex){
-						 System.out.println("File not found");
-						}
-				
 				}
 			
 			
