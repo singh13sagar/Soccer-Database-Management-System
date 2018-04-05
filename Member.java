@@ -2,8 +2,8 @@ import java.util.Random; // debug
 import java.io.*;
 
 public class Member implements Comparable<Member>{
-	public String Fname;
-	public String Lname;
+	private String Fname;
+	private String Lname;
 	private int pAttended; // # of practices attended
 	private String Address;
 	private int pBalance; // payment balance
@@ -15,20 +15,6 @@ public class Member implements Comparable<Member>{
 	private String Message;
 	
 	
-	/*public static void main(String[] args){  // htis method is for testing only, please remove
-		Member member = new Member ("Prabagar", "Sivakumar");
-		member.setNumber("647-555-5555");
-		member.setPaymentStatus(true);
-		member.setAddress("Somewhere in Scarborough");
-		member.setMessage("New message");
-		member.addMember();
-
-	}
-	*/
-	public Member(){
-		this.Fname="";
-		this.Lname="";
-	}
 	
 	public Member(String Fname, String Lname) 
 	{
@@ -44,11 +30,8 @@ public class Member implements Comparable<Member>{
 		phoneNumber = num;
 	}
 
-	public void setPaymentStatus(String bool){
-		if(bool.length()==4)
-			paid=true;
-		else
-			paid=false;
+	public void setPaymentStatus(boolean status){
+		paid = status;
 	}
 	public String getName()
  -	{
@@ -99,7 +82,10 @@ public class Member implements Comparable<Member>{
 		else return 0;
 	}
 	
-	
+	public String getName()
+	{
+		return Fname + " " + Lname;
+	}
 	public String getFName(){
 		return Fname;
 	}
@@ -132,7 +118,7 @@ public class Member implements Comparable<Member>{
 		
 		try{
 		FileWriter writer = new FileWriter ("logfile.txt" , true);  
-		writer.write(getFName() + " " + getLName()+ "\n"); 
+		writer.write(getName()+  "\n"); 
 		writer.write(getNumber()+ "\n");
 		writer.write(getPaymentStatus()+ "\n");
 		writer.write(getAddress()+ "\n");
@@ -141,9 +127,11 @@ public class Member implements Comparable<Member>{
 		writer.flush();
 		writer.close();
 		}catch(FileNotFoundException e){
-			System.out.println("File not found.");
+			System.out.println("File not found."); //change
 		}catch(IOException e){
 			System.out.println(e);
 		}
 	}
+	
+	
 }
