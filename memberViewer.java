@@ -63,7 +63,7 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 		JButton btnNewButton_1 = new JButton("Display Statement");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				DisplayStat stat = new DisplayStat();
+				DisplayStat stat = new DisplayStat(mainMemeber);
 				stat.setVisible(true);
 				//new memberViewer().lblName.setText("Hello");
 				setVisible(false);

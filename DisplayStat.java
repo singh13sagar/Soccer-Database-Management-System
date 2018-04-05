@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.sun.java.util.jar.pack.ConstantPool.MemberEntry;
+
 import javax.swing.JLabel;
 import java.awt.List;
 import javax.swing.JButton;
@@ -14,6 +17,7 @@ import java.awt.event.ActionEvent;
 public class DisplayStat extends JFrame {
 
 	private JPanel contentPane;
+	private Member mainMember;
 
 	/**
 	 * Launch the application.
@@ -34,7 +38,8 @@ public class DisplayStat extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public DisplayStat() {
+	public DisplayStat(Member mem) {
+		mainMember=mem;
 		setTitle("Statements");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -54,7 +59,13 @@ public class DisplayStat extends JFrame {
 		JButton btnNewButton = new JButton("<--");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				memberViewer temp = new memberViewer(mainMember);
+				temp.setVisible(true);
+				//new memberViewer("Try for now").setVisible(true);
+				setVisible(false);
+
 			}
+
 		});
 		btnNewButton.setBounds(359, 12, 77, 25);
 		contentPane.add(btnNewButton);
