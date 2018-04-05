@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class memberViewer extends JFrame {// See i made changes here you will see it
+public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 
 	private JPanel contentPane;
 	public JLabel lblName;
