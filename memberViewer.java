@@ -1,4 +1,3 @@
-//compilethis
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -14,7 +13,6 @@ import java.awt.event.ActionEvent;
 public class memberViewer extends JFrame {
 
 	private JPanel contentPane;
-	public JLabel lblName;
 
 	/**
 	 * Launch the application.
@@ -35,7 +33,7 @@ public class memberViewer extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public memberViewer(String name) {
+	public memberViewer() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 576, 300);
 		contentPane = new JPanel();
@@ -46,10 +44,7 @@ public class memberViewer extends JFrame {
 		JButton btnNewButton = new JButton("View Fees");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				Fees memberFee = new Fees();
-				memberFee.setVisible(true);
-				//new Fees().setVisible(true);
+				new Fees().setVisible(true);
 				//new memberViewer().lblName.setText("Hello");
 				setVisible(false);
 			}
@@ -65,9 +60,19 @@ public class memberViewer extends JFrame {
 		btnNewButton_2.setBounds(366, 107, 150, 25);
 		contentPane.add(btnNewButton_2);
 		
-		lblName = new JLabel("Hello");
+		JLabel lblName = new JLabel("Hello User");
 		lblName.setBounds(27, 41, 103, 15);
 		contentPane.add(lblName);
+
+		JButton btnNewButton_3 = new JButton("<--");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new club().setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnNewButton_3.setBounds(492, 12, 70, 25);
+		contentPane.add(btnNewButton_3);
 	}
 
 }
