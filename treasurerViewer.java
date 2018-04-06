@@ -26,7 +26,7 @@ public class treasurerViewer extends JFrame {
 		this.m = m;
 		setTitle("Treasurer Managment");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 250, 300);
+		setBounds(100, 100, 250, 200);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -55,6 +55,7 @@ public class treasurerViewer extends JFrame {
 		btnViewMembers.setBounds(50, 86, 150, 36);
 		contentPane.add(btnViewMembers);
 		
+		/*
 		JButton btnCoachExpenses = new JButton("Coach Expenses");
 		btnCoachExpenses.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -65,7 +66,7 @@ public class treasurerViewer extends JFrame {
 		});
 		btnCoachExpenses.setBounds(50, 144, 150, 36);
 		contentPane.add(btnCoachExpenses);
-		
+		*/
 		
 	}
 }
