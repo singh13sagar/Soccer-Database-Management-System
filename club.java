@@ -59,9 +59,31 @@ public class club extends JFrame {
 		JButton btnNewButton = new JButton("Treasurer");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				treasurerViewer tView = new treasurerViewer(mList);
-				tView.setVisible(true);
-				setVisible(false);
+				String password = "abc";
+				JPanel panel = new JPanel();
+				JLabel label = new JLabel("Enter a password:");
+				JPasswordField passwordBox = new JPasswordField(10);
+				panel.add(label);
+				panel.add(passwordBox);
+				String[] options = new String[]{"OK", "Cancel"};
+				int select = JOptionPane.showOptionDialog(null, panel, "Coach Validation",
+				                         JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
+				                         null, options, options[1]);
+
+				if(select == 0) 
+				{
+				    char[] coachPass = passwordBox.getPassword();
+				    String passCompare = String.copyValueOf(coachPass);
+
+				    if (passCompare.equals(password)){
+						treasurerViewer tView = new treasurerViewer(mList);
+						tView.setVisible(true);
+						setVisible(false);
+				    }
+				    
+				}
+
+				
 			}
 		});
 		btnNewButton.setBounds(172, 12, 117, 25);
