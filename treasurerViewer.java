@@ -40,7 +40,7 @@ public class treasurerViewer extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnNewButton.setBounds(50, 23, 150, 36);
+		btnNewButton.setBounds(70, 23, 150, 36);
 		contentPane.add(btnNewButton);
 		
 		
@@ -52,9 +52,18 @@ public class treasurerViewer extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnViewMembers.setBounds(50, 86, 150, 36);
+		btnViewMembers.setBounds(70, 86, 150, 36);
 		contentPane.add(btnViewMembers);
 		
+		JButton button = new JButton("<-");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+						new club(m).setVisible(true);
+						setVisible(false);
+			}
+		});
+		button.setBounds(10, 10, 50, 36);
+		contentPane.add(button);
 		/*
 		JButton btnCoachExpenses = new JButton("Coach Expenses");
 		btnCoachExpenses.addActionListener(new ActionListener() {
