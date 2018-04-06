@@ -21,11 +21,11 @@ public class notificationViewer extends JFrame {
 
 	private JPanel contentPane;
 	private Member mainMember;
-<<<<<<< HEAD
+
 	private JTextField txtHh;
-=======
+
 	private MemberList mList;
->>>>>>> 46af1ee19cff0cd420d409fb8f1a604de970c7c5
+
 	/**
 	 * Launch the application.
 	 */
