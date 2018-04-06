@@ -29,7 +29,7 @@ public class Member implements Comparable<Member>{
 		feeDue = ran.nextInt(6) + 100;
 		feeThatPaid = feeDue+120;
 		feeNotPaid = feeDue;
-	
+		timesPaid = rand.nextInt(10);
 	}
 	public Member(String Fname, String Lname) 
 	{
@@ -95,8 +95,9 @@ public class Member implements Comparable<Member>{
 	
 	public String toString()
 	{
+		
 		String out = "";
-		out = Fname+" "+Lname+" "+" Times Paid: " + timesPaid;
+		out = Fname+" "+Lname+" "+" Times Paid: " + timesPaid + " Fees Paid: "+feeThatPaid+" Fees Unpaid: "+feeNotPaid;
 		return out; 
 	}
 	
@@ -107,8 +108,8 @@ public class Member implements Comparable<Member>{
 	
 	@Override
 	public int compareTo(Member otherMember) {
-		if(otherMember.getPractices() > this.getPractices()) return -1;
-		else if(otherMember.getPractices() > this.getPractices()) return 1;
+		if(getTimesPaid() > otherMember.getTimesPaid()) return 1;
+		if(getTimesPaid() < otherMember.getTimesPaid()) return -1;
 		else return 0;
 	}
 	

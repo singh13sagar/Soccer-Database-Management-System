@@ -37,9 +37,9 @@ public class MemberList {
 	public String printList()
 	{
 		String list = "";
-		for(Member m : Members)
+		for(int i = 0; i < Members.size(); i++)
 		{
-			list += m.toString() + " \n";
+			list += Members.get(i).toString() + " \n\n";
 		}
 		return list;
 	}
@@ -47,7 +47,7 @@ public class MemberList {
 	public void paySort()
 	{
 		paidCompare p = new paidCompare();
-		Members.sort((Comparator<? super Member>) p);
+		Members.sort((Comparator<Member>) p);
 	}
 	
 	public class paidCompare implements Comparator<Member>{
@@ -55,7 +55,7 @@ public class MemberList {
 		public int compare(Member person1, Member person2)
 		{
 			if(person1.getTimesPaid() > person2.getTimesPaid()) return -1;
-			else if(person1.getTimesPaid() < person2.getTimesPaid()) return 1;
+			if(person1.getTimesPaid() < person2.getTimesPaid()) return 1;
 			else return 0;
 			
 		}
