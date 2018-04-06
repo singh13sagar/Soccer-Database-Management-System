@@ -1,20 +1,10 @@
 //compilethis
-
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.util.*;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 import java.io.*;
+import javax.swing.border.*;
 
 public class coachViewer extends JFrame {
 
@@ -53,7 +43,7 @@ public class coachViewer extends JFrame {
 
 		setTitle("Coach Viewer");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 659, 300);
+		setBounds(100, 100, 610, 223);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -71,7 +61,7 @@ public class coachViewer extends JFrame {
 				JOptionPane.showMessageDialog(panel, "Type the firstname follwed by a space and the lastname to add a member");
 				int select = JOptionPane.showOptionDialog(null, panel, "Add Member",
 				                         JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
-				                         null, options, options[1]);
+				                         null, options, options[1]); 
 				if(select == 0) 
 				{
 				     String memName = memeberName.getText(); //gets memberName
@@ -83,13 +73,31 @@ public class coachViewer extends JFrame {
 					 Member tempMem= new Member();
 					 tempMem.setFirstName(splitMemberaName[0]);
 					 tempMem.setLastName(splitMemberaName[1]);
- 					 mList.addMember(tempMem);
+                     mList.addMember(tempMem);
+
+					try
+					{
+					    String filename= "logfile.txt";
+					    FileWriter fw = new FileWriter(filename,true); //the true will append the new data
+					    fw.write("\n"); //appends the string to the file
+					    fw.write(splitMemberaName[0]); fw.write("\n");
+					    fw.write(splitMemberaName[1]); fw.write("\n");
+					    fw.write("Brampton"); fw.write("\n");
+					    fw.write("False"); fw.write("\n");
+					    fw.write("Null"); fw.write("\n");fw.write("\n");
+				    	fw.close();
+					}
+					catch(IOException ioe)
+					{
+					    System.err.println("IOException: " + ioe.getMessage());
+					}
+
  					 JOptionPane.showMessageDialog(panel, "Member has been added.");
 				    
 				}
 			}
 		});
-		btnNewButton_4.setBounds(171, 97, 147, 25);
+		btnNewButton_4.setBounds(74, 96, 147, 25);;
 		contentPane.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Delete Member");
@@ -129,16 +137,33 @@ public class coachViewer extends JFrame {
 			
 			}
 		});
-		btnNewButton_5.setBounds(334, 97, 147, 25);
+		btnNewButton_5.setBounds(245, 96, 147, 25);
 		contentPane.add(btnNewButton_5);
 		
 		JButton btnNewButton = new JButton("Notify Member");
-		btnNewButton.setBounds(498, 97, 147, 25);
+				btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 JTextArea textArea = new JTextArea(null,5,30);
+                textArea.setWrapStyleWord(true);
+                textArea.setLineWrap(true);
+           		JPanel panel = new JPanel(new BorderLayout(3,3));
+                panel.add(new JScrollPane(textArea), BorderLayout.CENTER);
+				String[] options = new String[]{"Send Notification", "Cancel"};
+				int select = JOptionPane.showOptionDialog(null, panel, "Notification",
+				                         JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
+				                         null, options, options[1]);
+				
+			}
+			
+		});
+		btnNewButton.setBounds(419, 96, 147, 25);
 		contentPane.add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("<--");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
+
 				new club().setVisible(true);
 				setVisible(false);
 
