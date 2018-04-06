@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 import java.awt.List;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -52,8 +53,13 @@ public class DisplayStat extends JFrame {
 		lblNewLabel.setBounds(40, 28, 151, 40);
 		contentPane.add(lblNewLabel);
 		
-		List list = new List();
+		JTextArea list=new JTextArea();
+		
+		//List list = new List();
 		list.setBounds(52, 100, 343, 99);
+		list.append("Account Statement for current month \n");
+		list.append("The Ammount you DUE this month: "+mainMember.getDuefee()+"\n");
+		list.append("The Ammount you PAID this month: " + mainMember.getPaid() + "\n");
 		contentPane.add(list);
 		
 		JButton btnNewButton = new JButton("<--");
