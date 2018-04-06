@@ -44,8 +44,6 @@ public class Treasurer {
 
 <<<<<<< HEAD
 =======
-		System.out.println("Revenue: $" + revenue );
->>>>>>> 7148f447fd5f637220dd6923d0097cc64cfdf96a
 
 	}
 
