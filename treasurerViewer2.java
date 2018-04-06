@@ -57,12 +57,24 @@ public class treasurerViewer2 extends JFrame {
 		button_1.setBounds(80, 199, 150, 36);
 		contentPane.add(button_1);
 		
-		Button button_2 = new Button("New button");
+		Button button_2 = new Button("Sort by Amount paid");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				m.paySort();
+				area.setText(m.printList());
 			}
 		});
-		button_2.setBounds(230, 199, 105, 36);
+		button_2.setBounds(230, 199, 150, 36);
 		contentPane.add(button_2);
+		
+		Button button_3= new Button("Sort by Amount Not paid");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				m.unpaidSort();
+				area.setText(m.printList());
+			}
+		});
+		button_3.setBounds(380, 199, 160, 36);
+		contentPane.add(button_3);
 	}
 }

@@ -50,12 +50,30 @@ public class MemberList {
 		Members.sort((Comparator<Member>) p);
 	}
 	
+	public void unpaidSort()
+	{
+		unpaidCompare p = new unpaidCompare();
+		Members.sort((Comparator<Member>) p);
+	}
+	
 	public class paidCompare implements Comparator<Member>{
 
 		public int compare(Member person1, Member person2)
 		{
-			if(person1.getTimesPaid() > person2.getTimesPaid()) return -1;
-			if(person1.getTimesPaid() < person2.getTimesPaid()) return 1;
+			if(person1.getPaid() > person2.getPaid()) return -1;
+			if(person1.getPaid() < person2.getPaid()) return 1;
+			else return 0;
+			
+		}
+
+	}
+	
+	public class unpaidCompare implements Comparator<Member>{
+
+		public int compare(Member person1, Member person2)
+		{
+			if(person1.getUnpaid() > person2.getUnpaid()) return -1;
+			if(person1.getUnpaid() < person2.getUnpaid()) return 1;
 			else return 0;
 			
 		}
