@@ -18,6 +18,7 @@ public class treasurerViewer extends JFrame {
 	private MemberList m;
 	private JPanel contentPane;
 
+
 	/**
 	 * Create the frame.
 	 */

@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JList;
 import javax.swing.JButton;
@@ -16,13 +17,15 @@ import java.awt.event.ActionEvent;
 
 public class treasurerViewer1 extends JFrame {
 	MemberList m;
+	private JTextArea area;
 	private JPanel contentPane;
-
+	private Treasurer treasurer;
 	/**
 	 * Create the frame.
 	 */
 	public treasurerViewer1(MemberList m) {
 		this.m = m;
+		treasurer = new Treasurer(m);
 		setTitle("Treasurer Managment");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -32,10 +35,10 @@ public class treasurerViewer1 extends JFrame {
 		contentPane.setLayout(null);
 		
 		
-		
-		List list = new List();
-		list.setBounds(82, 10, 191, 181);
-		contentPane.add(list);
+		area = new JTextArea();
+		area.setBounds(82, 10, 350, 275);
+		contentPane.add(area);
+		area.setText(treasurer.profit());
 		
 		
 		JButton button = new JButton("<-");
@@ -48,21 +51,5 @@ public class treasurerViewer1 extends JFrame {
 		button.setBounds(12, 10, 58, 36);
 		contentPane.add(button);
 		
-		
-		Button button_1 = new Button("New button");
-		button_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		button_1.setBounds(82, 199, 105, 36);
-		contentPane.add(button_1);
-		
-		Button button_2 = new Button("New button");
-		button_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		button_2.setBounds(193, 199, 105, 36);
-		contentPane.add(button_2);
 	}
 }
