@@ -16,6 +16,7 @@ public class notificationViewer extends JFrame {
 
 	private JPanel contentPane;
 	private Member mainMember;
+	private MemberList mList;
 	/**
 	 * Launch the application.
 	 */
@@ -35,8 +36,11 @@ public class notificationViewer extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public notificationViewer(Member mem) {
-		mainMember=mem;
+	public notificationViewer(MemberList mem, int i) {
+		//mainMember=mem;
+		mList=mem;
+		mainMember=mList.getMember(i);
+
 		setTitle("Notification");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -61,7 +65,7 @@ public class notificationViewer extends JFrame {
 		JButton btnNewButton = new JButton("<--");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				memberViewer temp = new memberViewer(mainMember);
+				memberViewer temp = new memberViewer(mList,i);
 				temp.setVisible(true);
 				setVisible(false);
 			}

@@ -118,15 +118,17 @@ public class club extends JFrame {
 				{
 					String memName = memeberName.getText().toLowerCase();
 					Member temp = new Member();
+					int j=0;
 					for(int i=0; i<mList.Members.size();i++)
 					{
 						temp=mList.getMember(i);
-						
+						j=i;
 						if(temp.getName().equals(memName))
 							i=mList.Members.size()+1; // top get out of loop
 					}
-						
-						memberViewer mView = new memberViewer(temp);
+					
+						//memberViewer mView = new memberViewer(temp);
+						memberViewer mView = new memberViewer(mList,j);
 						//mView.lblName.setText("Hello" + temp.getName());
 						mView.setVisible(true);
 

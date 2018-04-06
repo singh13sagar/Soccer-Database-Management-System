@@ -19,6 +19,7 @@ public class DisplayStat extends JFrame {
 
 	private JPanel contentPane;
 	private Member mainMember;
+	private MemberList mList;
 
 	/**
 	 * Launch the application.
@@ -39,8 +40,11 @@ public class DisplayStat extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public DisplayStat(Member mem) {
-		mainMember=mem;
+	public DisplayStat(MemberList mem, int i) {
+		//mainMember=mem;
+		mList=mem;
+		mainMember= mList.getMember(i);
+
 		setTitle("Statements");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -65,7 +69,7 @@ public class DisplayStat extends JFrame {
 		JButton btnNewButton = new JButton("<--");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				memberViewer temp = new memberViewer(mainMember);
+				memberViewer temp = new memberViewer(mList,i);
 				temp.setVisible(true);
 				//new memberViewer("Try for now").setVisible(true);
 				setVisible(false);
