@@ -75,6 +75,7 @@ public class coachViewer extends JFrame {
 					 tempMem.setLastName(splitMemberaName[1]);
                      mList.addMember(tempMem);
 
+					/*
 					try
 					{
 					    String filename= "logfile.txt";
@@ -91,6 +92,7 @@ public class coachViewer extends JFrame {
 					{
 					    System.err.println("IOException: " + ioe.getMessage());
 					}
+					*/
 
  					 JOptionPane.showMessageDialog(panel, "Member has been added.");
 				    
