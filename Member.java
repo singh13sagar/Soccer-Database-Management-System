@@ -108,8 +108,8 @@ public class Member implements Comparable<Member>{
 	
 	@Override
 	public int compareTo(Member otherMember) {
-		if(getTimesPaid() > otherMember.getTimesPaid()) return 1;
-		if(getTimesPaid() < otherMember.getTimesPaid()) return -1;
+		if(this.getTimesPaid() > otherMember.getTimesPaid()) return 1;
+		else if(this.getTimesPaid() < otherMember.getTimesPaid()) return -1;
 		else return 0;
 	}
 	

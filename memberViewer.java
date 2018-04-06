@@ -95,6 +95,7 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new club().setVisible(true);
+				//new club(mList).setVisible(true);
 				setVisible(false);
 			}
 		});
