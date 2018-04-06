@@ -164,9 +164,7 @@ public class coachViewer extends JFrame {
 		JButton btnNewButton_1 = new JButton("<--");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
-
-				new club().setVisible(true);
+				new club(mList).setVisible(true);
 				setVisible(false);
 
 			}

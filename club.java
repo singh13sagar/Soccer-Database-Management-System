@@ -35,6 +35,17 @@ public class club extends JFrame {
 	public club() {
 		//mList= new ArrayList<>();
 		mList = new MemberList();
+		makeGUI();
+	}
+
+	public club(MemberList m) {
+		//mList= new ArrayList<>();
+		mList = m;
+		makeGUI();
+	}
+
+	public void makeGUI()
+	{
 
 		this.read_Users();
 		setTitle("Memeber Management System");
@@ -130,8 +141,6 @@ public class club extends JFrame {
 		btnNewButton_2.setBounds(319, 12, 117, 25);
 		contentPane.add(btnNewButton_2);
 	}
-
-	
 
 	public void read_Users()
 	{
