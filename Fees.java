@@ -17,6 +17,8 @@ public class Fees extends JFrame {
 	private Member mainMember;
 	private JTextField ammountField;
 	private JLabel lblPrice;
+	private MemberList mList;
+	private int index;
 	/**
 	 * Launch the application.
 	 */
@@ -36,9 +38,11 @@ public class Fees extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Fees(Member mem) {
-		mainMember=mem;
-
+	public Fees(MemberList mem, int i) {
+		//mainMember=mem;
+		mList=mem;
+		index=i;
+		mainMember=mList.getMember(i);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -75,7 +79,7 @@ public class Fees extends JFrame {
 		JButton btnNewButton_2 = new JButton("<--");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				memberViewer temp = new memberViewer(mainMember);
+				memberViewer temp = new memberViewer(mList,i);
 				temp.setVisible(true);
 				//new memberViewer("Try for now").setVisible(true);
 				setVisible(false);
@@ -94,7 +98,8 @@ public class Fees extends JFrame {
 			
 			mainMember.deposit(Integer.parseInt(ammountField.getText()));
 			//lblPrice.setText(Integer.toString(mainMember.getDuefee()));
-			Fees temp = new Fees(mainMember);
+			//Fees temp = new Fees(mainMember);
+			Fees temp = new Fees(mList,index);
 			temp.setVisible(true);
 			//new memberViewer("Try for now").setVisible(true);
 			setVisible(false);

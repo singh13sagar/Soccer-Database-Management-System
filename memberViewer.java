@@ -16,6 +16,7 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 	private JPanel contentPane;
 	public JLabel lblName;
 	public Member mainMemeber;
+	private MemberList mList;
 	/**
 	 * Launch the application.
 	 */
@@ -35,9 +36,11 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 	/**
 	 * Create the frame.
 	 */
-	public memberViewer(Member mem) {
+	public memberViewer(MemberList mem, int i) {
 		
-		mainMemeber=mem;
+		//mainMemeber=mem;
+		mList=mem;
+		mainMemeber= mList.getMember(i);
 
 
 
@@ -51,7 +54,8 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 		JButton btnNewButton = new JButton("View Fees");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Fees membeFee = new Fees(mainMemeber);
+				//Fees membeFee = new Fees(mainMemeber);
+				Fees membeFee = new Fees(mList,i);
 				membeFee.setVisible(true);
 				//new memberViewer().lblName.setText("Hello");
 				setVisible(false);
@@ -63,7 +67,8 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 		JButton btnNewButton_1 = new JButton("Account Statement");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				DisplayStat stat = new DisplayStat(mainMemeber);
+				//DisplayStat stat = new DisplayStat(mainMemeber);
+				DisplayStat stat = new DisplayStat(mList,i);
 				stat.setVisible(true);
 				//new memberViewer().lblName.setText("Hello");
 				setVisible(false);
@@ -75,7 +80,8 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 		JButton btnNewButton_2 = new JButton("Notifications");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				notificationViewer notification = new notificationViewer(mainMemeber);
+				//notificationViewer notification = new notificationViewer(mainMemeber);
+				notificationViewer notification = new notificationViewer(mList,i);
 				notification.setVisible(true);
 				//new memberViewer().lblName.setText("Hello");
 				setVisible(false);
