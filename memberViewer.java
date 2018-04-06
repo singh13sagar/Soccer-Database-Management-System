@@ -60,7 +60,7 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 		btnNewButton.setBounds(12, 107, 150, 25);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Display Statement");
+		JButton btnNewButton_1 = new JButton("Account Statement");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				DisplayStat stat = new DisplayStat(mainMemeber);
