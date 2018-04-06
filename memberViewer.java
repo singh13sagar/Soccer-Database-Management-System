@@ -10,9 +10,8 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
+public class memberViewer extends JFrame {
 
-	//fuckthisshit
 	private JPanel contentPane;
 	public JLabel lblName;
 	public Member mainMemeber;
