@@ -102,14 +102,14 @@ public class club extends JFrame {
 				String password = "abc";
 				JPanel panel = new JPanel();
 				JLabel label = new JLabel("Enter Member Name:");
-				JLabel label2 = new JLabel("Enter Password:");
+				//JLabel label2 = new JLabel("Enter Password:");
 				
 				JTextField memeberName = new JTextField(15);
-				JPasswordField passwordBox = new JPasswordField(15);
+				//JPasswordField passwordBox = new JPasswordField(15);
 				panel.add(label);
 				panel.add(memeberName);
-				panel.add(label2);
-				panel.add(passwordBox);
+				//panel.add(label2);
+				//panel.add(passwordBox);
 				String[] options = new String[]{"OK", "Cancel"};
 				int select = JOptionPane.showOptionDialog(null, panel, "Coach Validation",
 				                         JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
