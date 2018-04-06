@@ -16,16 +16,21 @@ Type these following instructions on the command line, to compile the program. I
 javac memberManagement.java
 java memberManagement
 
+Program Instructions
+-----------------------
+The password to login for the coach and treasurer is "abc".
+To login as a member the username format is:
+firstname + " " + lastname. 
+2 options to retrieve member's first and last name:
+Add a new member from logging in coach.
+OR
+Log in as treasurer, view members, and log in with an existing member's name.
+
 Prerequisites
 --------------------
 Java needs to be installed, in order for this program to execute.
 Installation Link:
 https://java.com/en/download/manual.jsp
-
-Program Breakdown
------------------------
-Detailed Screenshots and Running tests will be displayed here
-for user efficiency.
 
 Developers
 --------------
@@ -34,3 +39,4 @@ Prabagar Sivakumar
 Kaushal Desai
 Elvis Sanchez
 Sagar Punn
+
