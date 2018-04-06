@@ -184,7 +184,7 @@ public class Member implements Comparable<Member>{
 			{
 				feeDue = 0;
 				paid=true;
-				feeThatPaid+=feeDue;
+				feeThatPaid+=ammount;
 				feeNotPaid=0;
 			}
 		else

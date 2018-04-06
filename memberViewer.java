@@ -1,7 +1,7 @@
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
+import java.lang.Object;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -83,10 +83,12 @@ public class memberViewer extends JFrame {// Ahhhhhopppopoododoodododod
 		});
 		btnNewButton_2.setBounds(366, 107, 150, 25);
 		contentPane.add(btnNewButton_2);
-		
-		lblName = new JLabel("Hello"+mainMemeber.getName());
+		String fn= mainMemeber.getFName().substring(0, 1).toUpperCase() + mainMemeber.getFName().substring(1).toLowerCase();
+		String ln = mainMemeber.getLName().substring(0, 1).toUpperCase()+ mainMemeber.getLName().substring(1).toLowerCase();
+
+		lblName = new JLabel("Hello "+fn+" "+ln);
 		//JLabel lblName = new JLabel("Hello User");
-		lblName.setBounds(27, 41, 103, 15);
+		lblName.setBounds(45, 41, 200, 15);
 		contentPane.add(lblName);
 
 		JButton btnNewButton_3 = new JButton("<--");

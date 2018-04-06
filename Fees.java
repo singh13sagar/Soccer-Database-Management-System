@@ -46,9 +46,6 @@ public class Fees extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(190, 158, 117, 25);
-		contentPane.add(btnNewButton);
 		
 		JLabel lbl1 = new JLabel("Your outstanding balance is:");
 		lbl1.setBounds(29, 65, 233, 15);

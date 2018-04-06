@@ -105,7 +105,7 @@ public class club extends JFrame {
 				                         null, options, options[1]);
 				if(select == 0) 
 				{
-					String memName = memeberName.getText();
+					String memName = memeberName.getText().toLowerCase();
 					Member temp = new Member();
 					for(int i=0; i<mList.Members.size();i++)
 					{
