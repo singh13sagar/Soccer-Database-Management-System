@@ -145,7 +145,7 @@ public class coachViewer extends JFrame {
 		JButton btnNewButton = new JButton("Notify Member");
 				btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 JTextArea textArea = new JTextArea(null,5,30);
+				JTextArea textArea = new JTextArea(null,5,30);
                 textArea.setWrapStyleWord(true);
                 textArea.setLineWrap(true);
            		JPanel panel = new JPanel(new BorderLayout(3,3));
@@ -154,6 +154,19 @@ public class coachViewer extends JFrame {
 				int select = JOptionPane.showOptionDialog(null, panel, "Notification",
 				                         JOptionPane.NO_OPTION, JOptionPane.PLAIN_MESSAGE,
 				                         null, options, options[1]);
+
+				if(select == 0) 
+				{
+					String message = textArea.getText();
+					Member temp = new Member();
+					for(int i=0; i<mList.Members.size();i++)
+					{
+						temp=mList.getMember(i);
+						
+						temp.setMessage(message);
+					}
+						JOptionPane.showMessageDialog(panel, "Notification Sent");
+				}
 				
 			}
 			
